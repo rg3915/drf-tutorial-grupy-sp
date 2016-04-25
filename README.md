@@ -38,11 +38,11 @@ Mas segundo [Diego Garcia][6], REST é um conjunto de princípios que definem co
 
 Para criar a API eu usei:
 
-* Ambiente: .venv
-* Projeto: myproject
-* App: core
-* Model: Person
-* Fields: first_name, last_name, email, active (boolean), created
+* Ambiente: `.venv`
+* Projeto: `myproject`
+* App: `core`
+* Model: `Person`
+* Fields: `first_name, last_name, email, active (boolean), created`
 
 ![img](img/person.jpg)
 
