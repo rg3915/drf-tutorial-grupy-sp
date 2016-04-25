@@ -60,3 +60,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+.venv
+*.sqlite3
+*.db
+
+/myproject/core/migrations
+/xmacro/temp
