@@ -338,7 +338,9 @@ String http://127.0.0.1:8000/users/
 KeyStrPress Return KeyStrRelease Return
 EOF
 
-
+cat << EOF > temp/digitar.txt
+String time source 02.sh
+EOF
 
 
 
@@ -376,78 +378,78 @@ sleep 1
 ### sleep 0.5
 ### xmacroplay -d 10 < temp/rmurlstemp.txt
 
-xmacroplay -d 25 < temp/enterteste.txt
+xmacroplay -d 60 < temp/enterteste.txt
 sleep 0.5
-xmacroplay -d 25 < temp/venv.txt
+xmacroplay -d 60 < temp/venv.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/activate.txt
+xmacroplay -d 60 < temp/activate.txt
 sleep 0.5
-xmacroplay -d 25 < temp/pa.txt
+xmacroplay -d 60 < temp/pa.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/enterfolder.txt
+xmacroplay -d 60 < temp/enterfolder.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/install.txt
+xmacroplay -d 60 < temp/install.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
 xmacroplay -d 3 < temp/limpar.txt
-xmacroplay -d 25 < temp/freeze.txt
+xmacroplay -d 60 < temp/freeze.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
 xmacroplay -d 3 < temp/limpar.txt
-xmacroplay -d 25 < temp/startproject.txt
+xmacroplay -d 60 < temp/startproject.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/ls_la.txt
+xmacroplay -d 60 < temp/ls_la.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/cdmyproject.txt
+xmacroplay -d 60 < temp/cdmyproject.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/startapp.txt
+xmacroplay -d 60 < temp/startapp.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/voltarpasta.txt
+xmacroplay -d 60 < temp/voltarpasta.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/treeproject.txt
+xmacroplay -d 60 < temp/treeproject.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/migrate.txt
+xmacroplay -d 60 < temp/migrate.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
 xmacroplay -d 3 < temp/limpar.txt
-xmacroplay -d 25 < temp/createsuperuser.txt
+xmacroplay -d 60 < temp/createsuperuser.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/password.txt
+xmacroplay -d 60 < temp/password.txt
 sleep 0.5
-xmacroplay -d 25 < temp/password.txt
+xmacroplay -d 60 < temp/password.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
 
 xmacroplay -d 10 < temp/limpar.txt
-xmacroplay -d 25 < temp/cdmyproject.txt
+xmacroplay -d 60 < temp/cdmyproject.txt
 sleep 1
-xmacroplay -d 25 < temp/opensettings.txt
+xmacroplay -d 60 < temp/opensettings.txt
 sleep 1
-xmacroplay -d 25 < temp/find_staticfiles.txt
-xmacroplay -d 25 < temp/newlinebelow.txt
+xmacroplay -d 60 < temp/find_staticfiles.txt
+xmacroplay -d 60 < temp/newlinebelow.txt
 sleep 1
-xmacroplay -d 25 < temp/settings.txt # editar
+xmacroplay -d 60 < temp/settings.txt # editar
 sleep 1
-xmacroplay -d 25 < temp/salvar.txt
+xmacroplay -d 60 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 25 < temp/salvarfechar.txt
+xmacroplay -d 60 < temp/salvarfechar.txt
 xmacroplay -d 10 < temp/limpar.txt
-xmacroplay -d 25 < temp/serializersfake.txt
+xmacroplay -d 60 < temp/serializersfake.txt
 xmacroplay -d 10 < temp/limpar.txt
-xmacroplay -d 25 < temp/tree.txt
+xmacroplay -d 60 < temp/tree.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
@@ -455,102 +457,95 @@ continuar
 # serializers.py
 xmacroplay -d 10 < temp/limpar.txt
 sleep 1
-xmacroplay -d 25 < temp/openserializers.txt
+xmacroplay -d 60 < temp/openserializers.txt
 sleep 1
 xmacroplay -d 10 < temp/edit.txt
 sleep 1
-xmacroplay -d 25 < temp/serializers.txt # editar
+xmacroplay -d 60 < temp/serializers.txt # editar
 sleep 1
-xmacroplay -d 25 < temp/salvar.txt
+xmacroplay -d 60 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
 sleep 0.5
-xmacroplay -d 25 < temp/salvarfechar.txt
+xmacroplay -d 60 < temp/salvarfechar.txt
 
 # views.py
 xmacroplay -d 10 < temp/limpar.txt
 sleep 1
-xmacroplay -d 25 < temp/openviews.txt
+xmacroplay -d 60 < temp/openviews.txt
 sleep 1
-xmacroplay -d 25 < temp/deleteall.txt
+xmacroplay -d 60 < temp/deleteall.txt
 sleep 0.5
 xmacroplay -d 10 < temp/edit.txt
 sleep 1
-xmacroplay -d 25 < temp/views.txt # editar
+xmacroplay -d 60 < temp/views.txt # editar
 sleep 1
-xmacroplay -d 25 < temp/salvar.txt
+xmacroplay -d 60 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
 sleep 0.5
-xmacroplay -d 25 < temp/salvarfechar.txt
+xmacroplay -d 60 < temp/salvarfechar.txt
 
 # urls.py
 xmacroplay -d 10 < temp/limpar.txt
 sleep 1
-xmacroplay -d 25 < temp/openurls.txt
+xmacroplay -d 60 < temp/openurls.txt
 sleep 1
-xmacroplay -d 25 < temp/deleteall.txt
+xmacroplay -d 60 < temp/deleteall.txt
 sleep 1
 xmacroplay -d 10 < temp/edit.txt
 sleep 1
-xmacroplay -d 25 < temp/urls.txt # editar
+xmacroplay -d 60 < temp/urls.txt # editar
 sleep 1
-xmacroplay -d 25 < temp/salvar.txt
+xmacroplay -d 60 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
-sleep 0.5
-xmacroplay -d 25 < temp/salvarfechar.txt
+xmacroplay -d 60 < temp/salvarfechar.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 25 < temp/voltarpasta.txt
+xmacroplay -d 60 < temp/voltarpasta.txt
 sleep 1
-xmacroplay -d 25 < temp/runserver.txt
+xmacroplay -d 60 < temp/runserver.txt
 xmacroplay -d 3 < temp/ctrl_e.txt
 sleep 2
-xmacroplay -d 25 < temp/ps1.txt
+xmacroplay -d 60 < temp/ps1.txt
 # aumentar a fonte
 for i in $(seq 1 5); do xmacroplay -d 3 < temp/zoom.txt; done
 # limpar a tela
 xmacroplay -d 3 < temp/limpar.txt
 sleep 2
 # for i in $(seq 1 30); do xmacroplay -d 3 < temp/left.txt; done
-xmacroplay -d 25 < temp/curl.txt
+xmacroplay -d 60 < temp/curl.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar2
 
-xmacroplay -d 25 < temp/http.txt
+xmacroplay -d 60 < temp/http.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar2
 
 xmacroplay -d 3 < temp/limpar.txt
-xmacroplay -d 25 < temp/createsuperuser_regis.txt
+xmacroplay -d 60 < temp/createsuperuser_regis.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar2
 
-xmacroplay -d 25 < temp/password.txt
+xmacroplay -d 60 < temp/password.txt
 sleep 0.5
-xmacroplay -d 25 < temp/password.txt
+xmacroplay -d 60 < temp/password.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar2
 
-xmacroplay -d 25 < temp/http.txt
+xmacroplay -d 60 < temp/http.txt
 xmacroplay -d 3 < temp/alternar.txt
-
-continuar2
-
-
-# xmacroplay -d 15 < temp/fim.txt
-
-# rm -f *.py
+xmacroplay -d 3 < temp/digitar.txt
