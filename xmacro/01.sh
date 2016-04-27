@@ -7,6 +7,12 @@ echo "KeyStrPress Control_L KeyStrPress l KeyStrRelease l KeyStrRelease Control_
 
 echo "KeyStrPress Control_L KeyStrPress Shift_L KeyStrPress equal KeyStrRelease equal KeyStrRelease Shift_L KeyStrRelease Control_L " > temp/zoom.txt
 
+echo "KeyStrPress Control_L KeyStrPress Shift_L KeyStrPress e KeyStrRelease e KeyStrRelease Control_L KeyStrRelease Shift_L" > temp/ctrl_e.txt
+
+echo "KeyStrPress Control_L KeyStrPress Shift_L KeyStrPress Left KeyStrRelease Left KeyStrRelease Shift_L KeyStrRelease Control_L" > temp/left.txt
+
+echo "KeyStrPress Control_L KeyStrPress Shift_L KeyStrPress Right KeyStrRelease Right KeyStrRelease Shift_L KeyStrRelease Control_L" > temp/right.txt
+
 cat << EOF > temp/deletalinha3.txt
 KeyStrPress Shift_L KeyStrPress semicolon KeyStrRelease semicolon KeyStrRelease Shift_L
 String 3d
@@ -36,6 +42,23 @@ EOF
 
 cat << EOF > temp/enterteste.txt
 String mkdir teste; cd teste
+KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/p.txt
+String p
+KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/ps1.txt
+String PS1="$ "
+KeyStrPress Return KeyStrRelease Return
+String clear
+KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/pa.txt
+String pa
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -85,17 +108,23 @@ KeyStrPress Return KeyStrRelease Return
 EOF
 
 cat << EOF > temp/createsuperuser.txt
-String python manage.py createsuperuser  --username='admin' --email=''
+String python manage.py createsuperuser --username='admin' 
+KeyStrPress backslash KeyStrRelease backslash
+KeyStrPress Return KeyStrRelease Return
+String --email='admin@django.com'
+KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/createsuperuser_regis.txt
+String python manage.py createsuperuser --username='regis' 
+KeyStrPress backslash KeyStrRelease backslash
+KeyStrPress Return KeyStrRelease Return
+String --email='regis.santos.100@gmail.com'
 KeyStrPress Return KeyStrRelease Return
 EOF
 
 cat << EOF > temp/password.txt
 String demodemo
-KeyStrPress Return KeyStrRelease Return
-EOF
-
-cat << EOF > temp/password.txt
-String cd myproject
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -151,6 +180,11 @@ EOF
 ## openserializers.txt ##
 cat << EOF > temp/openserializers.txt
 String vim core/serializers.py
+KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/serializersfake.txt
+String touch core/serializers_.py
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -283,6 +317,27 @@ String rm -f myproject/urlstemp.py
 KeyStrPress Return KeyStrRelease Return
 EOF
 
+cat << EOF > temp/runserver.txt
+String python manage.py runserver
+KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/curl.txt
+String curl -H 'Accept: application/json; indent=4' 
+KeyStrPress backslash KeyStrRelease backslash
+KeyStrPress Return KeyStrRelease Return
+String -u admin:demodemo http://127.0.0.1:8000/users/
+KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/http.txt
+String http -a admin:demodemo 
+KeyStrPress backslash KeyStrRelease backslash
+KeyStrPress Return KeyStrRelease Return
+String http://127.0.0.1:8000/users/
+KeyStrPress Return KeyStrRelease Return
+EOF
+
 
 
 
@@ -299,18 +354,27 @@ continuar(){
     fi
 }
 
-# settings.py
+continuar2(){
+    read -p "Deseja continuar? (S/n): " answer
+    answer=${answer:-s}
+    if [ "$answer" == "s" ]; then
+        continue;
+        xmacroplay -d 3 < temp/alternar.txt
+        xmacroplay -d 3 < temp/alternar.txt
+    fi
+}
+
 xmacroplay -d 3 < temp/alternar.txt
 sleep 1
 
-# temp
-# xmacroplay -d 10 < temp/rmteste.txt
-# sleep 0.5
-# xmacroplay -d 10 < temp/rmserializerstemp.txt
-# sleep 0.5
-# xmacroplay -d 10 < temp/rmviewstemp.txt
-# sleep 0.5
-# xmacroplay -d 10 < temp/rmurlstemp.txt
+### temp
+### xmacroplay -d 10 < temp/rmteste.txt
+### sleep 0.5
+### xmacroplay -d 10 < temp/rmserializerstemp.txt
+### sleep 0.5
+### xmacroplay -d 10 < temp/rmviewstemp.txt
+### sleep 0.5
+### xmacroplay -d 10 < temp/rmurlstemp.txt
 
 xmacroplay -d 25 < temp/enterteste.txt
 sleep 0.5
@@ -318,6 +382,8 @@ xmacroplay -d 25 < temp/venv.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
 xmacroplay -d 25 < temp/activate.txt
+sleep 0.5
+xmacroplay -d 25 < temp/pa.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
 xmacroplay -d 25 < temp/enterfolder.txt
@@ -379,6 +445,8 @@ continuar
 
 xmacroplay -d 25 < temp/salvarfechar.txt
 xmacroplay -d 10 < temp/limpar.txt
+xmacroplay -d 25 < temp/serializersfake.txt
+xmacroplay -d 10 < temp/limpar.txt
 xmacroplay -d 25 < temp/tree.txt
 xmacroplay -d 3 < temp/alternar.txt
 
@@ -406,7 +474,7 @@ xmacroplay -d 10 < temp/limpar.txt
 sleep 1
 xmacroplay -d 25 < temp/openviews.txt
 sleep 1
-xmacroplay -d 25 < temp/deletalinha3.txt
+xmacroplay -d 25 < temp/deleteall.txt
 sleep 0.5
 xmacroplay -d 10 < temp/edit.txt
 sleep 1
@@ -438,9 +506,51 @@ continuar
 
 sleep 0.5
 xmacroplay -d 25 < temp/salvarfechar.txt
+xmacroplay -d 3 < temp/alternar.txt
+
+continuar
+
+xmacroplay -d 25 < temp/voltarpasta.txt
+sleep 1
+xmacroplay -d 25 < temp/runserver.txt
+xmacroplay -d 3 < temp/ctrl_e.txt
+sleep 2
+xmacroplay -d 25 < temp/ps1.txt
+# aumentar a fonte
+for i in $(seq 1 5); do xmacroplay -d 3 < temp/zoom.txt; done
+# limpar a tela
+xmacroplay -d 3 < temp/limpar.txt
+sleep 2
+# for i in $(seq 1 30); do xmacroplay -d 3 < temp/left.txt; done
+xmacroplay -d 25 < temp/curl.txt
+xmacroplay -d 3 < temp/alternar.txt
+
+continuar2
+
+xmacroplay -d 25 < temp/http.txt
+xmacroplay -d 3 < temp/alternar.txt
+
+continuar2
+
+xmacroplay -d 3 < temp/limpar.txt
+xmacroplay -d 25 < temp/createsuperuser_regis.txt
+xmacroplay -d 3 < temp/alternar.txt
+
+continuar2
+
+xmacroplay -d 25 < temp/password.txt
+sleep 0.5
+xmacroplay -d 25 < temp/password.txt
+xmacroplay -d 3 < temp/alternar.txt
+
+continuar2
+
+xmacroplay -d 25 < temp/http.txt
+xmacroplay -d 3 < temp/alternar.txt
+
+continuar2
 
 
-# for i in $(seq 1 20); do xmacroplay -d 3 < temp/right.txt; done
 # xmacroplay -d 15 < temp/fim.txt
 
 # rm -f *.py
