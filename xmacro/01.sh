@@ -7,11 +7,20 @@ echo "KeyStrPress Control_L KeyStrPress l KeyStrRelease l KeyStrRelease Control_
 
 echo "KeyStrPress Control_L KeyStrPress Shift_L KeyStrPress equal KeyStrRelease equal KeyStrRelease Shift_L KeyStrRelease Control_L " > temp/zoom.txt
 
-cat << EOF > temp/deletalinha2.txt
+cat << EOF > temp/deletalinha3.txt
 KeyStrPress Shift_L KeyStrPress semicolon KeyStrRelease semicolon KeyStrRelease Shift_L
-String 2d
+String 3d
 KeyStrPress Return KeyStrRelease Return
 EOF
+
+cat << EOF > temp/deleteall.txt
+KeyStrPress Shift_L KeyStrPress semicolon KeyStrRelease semicolon KeyStrRelease Shift_L
+String 1,
+KeyStrPress Shift_R KeyStrPress 4 KeyStrRelease 4 KeyStrRelease Shift_R
+String d
+KeyStrPress Return KeyStrRelease Return
+EOF
+
 
 echo "String i" > temp/edit.txt
 
@@ -22,6 +31,11 @@ EOF
 
 cat << EOF > temp/activate.txt
 String source .venv/bin/activate
+KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/enterteste.txt
+String mkdir teste; cd teste
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -123,7 +137,7 @@ EOF
 
 ## tree.txt ##
 cat << EOF > temp/tree.txt
-String tree myproject/core
+String tree core
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -136,7 +150,7 @@ EOF
 
 ## openserializers.txt ##
 cat << EOF > temp/openserializers.txt
-String vim myproject/core/serializers.py
+String vim core/serializers.py
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -165,7 +179,7 @@ EOF
 
 ## openviews.txt ##
 cat << EOF > temp/openviews.txt
-String vim myproject/core/views.py
+String vim core/views.py
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -193,7 +207,7 @@ EOF
 
 ## openurls.txt ##
 cat << EOF > temp/openurls.txt
-String vim myproject/urls.py
+String vim urls.py
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -298,6 +312,8 @@ sleep 1
 # sleep 0.5
 # xmacroplay -d 10 < temp/rmurlstemp.txt
 
+xmacroplay -d 25 < temp/enterteste.txt
+sleep 0.5
 xmacroplay -d 25 < temp/venv.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
@@ -371,49 +387,56 @@ continuar
 # serializers.py
 xmacroplay -d 10 < temp/limpar.txt
 sleep 1
-xmacroplay -d 25 < temp/openserializerstxt
+xmacroplay -d 25 < temp/openserializers.txt
 sleep 1
 xmacroplay -d 10 < temp/edit.txt
 sleep 1
-xmacroplay -d 25 < temp/serializerstxt # editar
+xmacroplay -d 25 < temp/serializers.txt # editar
 sleep 1
 xmacroplay -d 25 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
+sleep 0.5
 xmacroplay -d 25 < temp/salvarfechar.txt
 
 # views.py
 xmacroplay -d 10 < temp/limpar.txt
 sleep 1
-xmacroplay -d 25 < temp/openviewstxt
+xmacroplay -d 25 < temp/openviews.txt
 sleep 1
+xmacroplay -d 25 < temp/deletalinha3.txt
+sleep 0.5
 xmacroplay -d 10 < temp/edit.txt
 sleep 1
-xmacroplay -d 25 < temp/viewstxt # editar
+xmacroplay -d 25 < temp/views.txt # editar
 sleep 1
 xmacroplay -d 25 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
+sleep 0.5
 xmacroplay -d 25 < temp/salvarfechar.txt
 
 # urls.py
 xmacroplay -d 10 < temp/limpar.txt
 sleep 1
-xmacroplay -d 25 < temp/openurlstxt
+xmacroplay -d 25 < temp/openurls.txt
+sleep 1
+xmacroplay -d 25 < temp/deleteall.txt
 sleep 1
 xmacroplay -d 10 < temp/edit.txt
 sleep 1
-xmacroplay -d 25 < temp/urlstxt # editar
+xmacroplay -d 25 < temp/urls.txt # editar
 sleep 1
 xmacroplay -d 25 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
+sleep 0.5
 xmacroplay -d 25 < temp/salvarfechar.txt
 
 
