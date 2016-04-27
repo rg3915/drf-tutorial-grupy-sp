@@ -62,18 +62,18 @@ String pa
 KeyStrPress Return KeyStrRelease Return
 EOF
 
+cat << EOF > temp/ls_la.txt
+String ls -la
+KeyStrPress Return KeyStrRelease Return
+EOF
+
 cat << EOF > temp/enterfolder.txt
 String mkdir drf-tutorial-grupy-sp; cd drf-tutorial-grupy-sp
 KeyStrPress Return KeyStrRelease Return
 EOF
 
 cat << EOF > temp/install.txt
-String pip install django==1.9.5 djangorestframework==3.3.3
-KeyStrPress Return KeyStrRelease Return
-EOF
-
-cat << EOF > temp/pip.txt
-String pip install -U pip
+String pip install django djangorestframework; pip install -U pip
 KeyStrPress Return KeyStrRelease Return
 EOF
 
@@ -392,15 +392,15 @@ continuar
 xmacroplay -d 25 < temp/install.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
-xmacroplay -d 25 < temp/pip.txt
-xmacroplay -d 3 < temp/alternar.txt
-continuar
 xmacroplay -d 3 < temp/limpar.txt
 xmacroplay -d 25 < temp/freeze.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
 xmacroplay -d 3 < temp/limpar.txt
 xmacroplay -d 25 < temp/startproject.txt
+xmacroplay -d 3 < temp/alternar.txt
+continuar
+xmacroplay -d 25 < temp/ls_la.txt
 xmacroplay -d 3 < temp/alternar.txt
 continuar
 xmacroplay -d 25 < temp/cdmyproject.txt
