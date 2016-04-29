@@ -93,6 +93,9 @@ cat << EOF > temp/serialization.txt
 KeyStrPress Shift_L KeyStrPress 3 KeyStrRelease 3 KeyStrRelease Shift_L
 String  Serialization
 KeyStrPress Return KeyStrRelease Return
+EOF
+
+cat << EOF > temp/serialization1.txt
 KeyStrPress Shift_L KeyStrPress 3 KeyStrRelease 3 KeyStrRelease Shift_L
 String  Project: myproject
 KeyStrPress Return KeyStrRelease Return
@@ -332,7 +335,7 @@ EOF
 cat << EOF > temp/views2.txt
 String class JSONResponse(HttpResponse):
 KeyStrPress Return KeyStrRelease Return
-String     """ An HttpResponse that renders its content into JSON. """
+String     """ Um HttpResponse que retorna seu conteudo em JSON. """
 KeyStrPress Return KeyStrRelease Return
 KeyStrPress Return KeyStrRelease Return
 String     def __init__(self, data, **kwargs):
@@ -351,7 +354,7 @@ String @csrf_exempt
 KeyStrPress Return KeyStrRelease Return
 String def person_list(request):
 KeyStrPress Return KeyStrRelease Return
-String     """ List all persons, or create a new person. """
+String     """ Lista todas as pessoas, ou cria uma nova pessoa. """
 KeyStrPress Return KeyStrRelease Return
 String     if request.method == 'GET':
 KeyStrPress Return KeyStrRelease Return
@@ -384,7 +387,7 @@ String @csrf_exempt
 KeyStrPress Return KeyStrRelease Return
 String def person_detail(request, pk):
 KeyStrPress Return KeyStrRelease Return
-String     """ Retrieve, update or delete a person. """
+String     """ Recupera, atualiza ou deleta uma pessoa. """
 KeyStrPress Return KeyStrRelease Return
 String     try:
 KeyStrPress Return KeyStrRelease Return
@@ -490,9 +493,11 @@ KeyStrPress Return KeyStrRelease Return
 EOF
 
 cat << EOF > temp/http3.txt
-String http http://127.0.0.1:8000/api/persons/ \
+String http http://127.0.0.1:8000/api/persons/ 
+KeyStrPress backslash KeyStrRelease backslash
 KeyStrPress Return KeyStrRelease Return
-String first_name="Guido" last_name="Van Rossum" \
+String first_name="Guido" last_name="Van Rossum" 
+KeyStrPress backslash KeyStrRelease backslash
 KeyStrPress Return KeyStrRelease Return
 String email="guido@email.com"
 KeyStrPress Return KeyStrRelease Return
@@ -550,6 +555,11 @@ xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
+xmacroplay -d 25 < temp/serialization1.txt
+xmacroplay -d 3 < temp/alternar.txt
+
+continuar
+
 xmacroplay -d 10 < temp/limpar.txt
 sleep 1
 xmacroplay -d 15 < temp/cdmyproject.txt
@@ -560,7 +570,7 @@ xmacroplay -d 10 < temp/gotolastline.txt
 sleep 0.5
 xmacroplay -d 10 < temp/replace.txt
 sleep 0.5
-xmacroplay -d 15 < temp/models.txt
+xmacroplay -d 15 < temp/models.txt # velocidade 15
 sleep 1
 xmacroplay -d 15 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
@@ -583,7 +593,7 @@ xmacroplay -d 10 < temp/gotoline4.txt
 sleep 0.5
 xmacroplay -d 10 < temp/edit.txt
 sleep 0.5
-xmacroplay -d 15 < temp/serializers.txt
+xmacroplay -d 60 < temp/serializers.txt
 sleep 1
 xmacroplay -d 15 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
@@ -593,7 +603,7 @@ continuar
 xmacroplay -d 10 < temp/esc.txt
 xmacroplay -d 10 < temp/gotolastline.txt
 xmacroplay -d 10 < temp/newlinebelow.txt
-xmacroplay -d 15 < temp/serializers2.txt
+xmacroplay -d 15 < temp/serializers2.txt # velocidade 15
 sleep 1
 xmacroplay -d 15 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
@@ -602,7 +612,7 @@ continuar
 
 xmacroplay -d 10 < temp/edit.txt
 sleep 0.5
-xmacroplay -d 15 < temp/serializers3.txt
+xmacroplay -d 60 < temp/serializers3.txt
 sleep 1
 xmacroplay -d 15 < temp/salvar.txt
 xmacroplay -d 3 < temp/alternar.txt
@@ -615,16 +625,16 @@ xmacroplay -d 3 < temp/alternar.txt
 continuar
 
 xmacroplay -d 25 < temp/limpar.txt
-xmacroplay -d 15 < temp/voltarpasta.txt
+xmacroplay -d 60 < temp/voltarpasta.txt
 sleep 2
-xmacroplay -d 15 < temp/msgmigration.txt
-xmacroplay -d 15 < temp/migrate.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/msgmigration.txt
+xmacroplay -d 60 < temp/migrate.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
 xmacroplay -d 25 < temp/limpar.txt
-xmacroplay -d 15 < temp/shell.txt
+xmacroplay -d 60 < temp/shell.txt
 xmacroplay -d 15 < temp/alternar.txt
 
 continuar
@@ -634,25 +644,25 @@ xmacroplay -d 15 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 15 < temp/shell2.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/shell2.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 15 < temp/shell3.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/shell3.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 15 < temp/shell4.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/shell4.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
 xmacroplay -d 15 < temp/sair.txt
 xmacroplay -d 3 < temp/limpar.txt
 sleep 2
-xmacroplay -d 15 < temp/cdmyproject.txt
+xmacroplay -d 60 < temp/cdmyproject.txt
 xmacroplay -d 5 < temp/alternar.txt
 
 continuar
@@ -667,7 +677,7 @@ sleep 1
 xmacroplay -d 5 < temp/gotoline14.txt
 xmacroplay -d 5 < temp/insert_end_line.txt
 for i in $(seq 1 12); do xmacroplay -d 15 < temp/goto_left.txt; done
-xmacroplay -d 15 < temp/serializers4.txt
+xmacroplay -d 60 < temp/serializers4.txt
 xmacroplay -d 10 < temp/esc.txt
 sleep 2
 xmacroplay -d 10 < temp/down.txt
@@ -676,7 +686,7 @@ for i in $(seq 1 6); do
     sleep 1
 done
 xmacroplay -d 3 < temp/edit.txt
-xmacroplay -d 15 < temp/serializers5.txt
+xmacroplay -d 60 < temp/serializers5.txt
 xmacroplay -d 3 < temp/alternar.txt
 
 continuar
@@ -687,14 +697,14 @@ xmacroplay -d 3 < temp/alternar.txt
 continuar
 
 xmacroplay -d 25 < temp/limpar.txt
-xmacroplay -d 25 < temp/voltarpasta.txt
+xmacroplay -d 60 < temp/voltarpasta.txt
 xmacroplay -d 15 < temp/shell.txt
 xmacroplay -d 15 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 15 < temp/shell5.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/shell5.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
@@ -708,23 +718,23 @@ xmacroplay -d 5 < temp/openviews.txt
 xmacroplay -d 5 < temp/gotoline5.txt
 xmacroplay -d 5 < temp/edit.txt
 sleep 0.5
-xmacroplay -d 30 < temp/views1.txt
+xmacroplay -d 15 < temp/views1.txt # velocidade 15
 xmacroplay -d 15 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 15 < temp/views2.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/views2.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 15 < temp/views3.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/views3.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 15 < temp/views4.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/views4.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
@@ -739,8 +749,8 @@ sleep 2
 xmacroplay -d 15 < temp/open_core_urls.txt
 xmacroplay -d 15 < temp/edit.txt
 sleep 1
-xmacroplay -d 15 < temp/core_urls.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 60 < temp/core_urls.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
@@ -753,9 +763,9 @@ xmacroplay -d 5 < temp/open_urls.txt
 xmacroplay -d 5 < temp/gotoline10.txt
 xmacroplay -d 10 < temp/newlinebelow.txt
 sleep 0.5
-xmacroplay -d 15 < temp/urls.txt
+xmacroplay -d 60 < temp/urls.txt
 xmacroplay -d 15 < temp/salvar.txt
-xmacroplay -d 15 < temp/alternar.txt
+xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
@@ -783,6 +793,7 @@ xmacroplay -d 3 < temp/alternar.txt
 
 continuar2
 
+xmacroplay -d 3 < temp/limpar.txt
 xmacroplay -d 60 < temp/http3.txt
 xmacroplay -d 3 < temp/alternar.txt
 
