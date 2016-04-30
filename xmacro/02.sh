@@ -42,6 +42,12 @@ String d
 KeyStrPress Return KeyStrRelease Return
 EOF
 
+cat << EOF > temp/salvar.txt
+KeyStrPress Escape KeyStrRelease Escape
+String :w
+KeyStrPress Return KeyStrRelease Return
+EOF
+
 cat << EOF > temp/salvarfechar.txt
 KeyStrPress Escape KeyStrRelease Escape
 String :wq
@@ -520,6 +526,11 @@ String  github.com/grupy-sp/encontros
 KeyStrPress Return KeyStrRelease Return
 EOF
 
+cat << EOF > temp/digitar.txt
+String source xmacroexample.sh
+EOF
+
+
 # xmacroplay ----------------------------------------------
 answer="s"
 
@@ -746,7 +757,7 @@ continuar
 xmacroplay -d 15 < temp/limpar.txt
 xmacroplay -d 15 < temp/msgurls.txt
 sleep 2
-xmacroplay -d 15 < temp/open_core_urls.txt
+xmacroplay -d 60 < temp/open_core_urls.txt
 xmacroplay -d 15 < temp/edit.txt
 sleep 1
 xmacroplay -d 60 < temp/core_urls.txt
@@ -759,7 +770,7 @@ xmacroplay -d 3 < temp/alternar.txt
 
 continuar
 
-xmacroplay -d 5 < temp/open_urls.txt
+xmacroplay -d 60 < temp/open_urls.txt
 xmacroplay -d 5 < temp/gotoline10.txt
 xmacroplay -d 10 < temp/newlinebelow.txt
 sleep 0.5
@@ -803,3 +814,4 @@ xmacroplay -d 15 < temp/limpar.txt
 xmacroplay -d 60 < temp/enter.txt
 xmacroplay -d 20 < temp/fim.txt
 xmacroplay -d 3 < temp/alternar.txt
+xmacroplay -d 3 < temp/digitar.txt
