@@ -203,7 +203,7 @@ xmacroplay -d 25 < temp/exit.txt
 sleep 1
 xmacroplay -d 25 < temp/limpar.txt
 sleep 1
-for i in $(seq 1 5); do xmacroplay -d 3 < temp/zoom.txt; done
+for i in $(seq 1 3); do xmacroplay -d 3 < temp/zoom.txt; done
 sleep 1
 xmacroplay -d 25 < temp/limpar.txt
 xmacroplay -d 60 < temp/openxmacroteste.txt

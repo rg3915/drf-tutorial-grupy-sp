@@ -575,7 +575,7 @@ xmacroplay -d 10 < temp/limpar.txt
 sleep 1
 xmacroplay -d 15 < temp/cdmyproject.txt
 sleep 0.5
-xmacroplay -d 15 < temp/openmodels.txt
+xmacroplay -d 60 < temp/openmodels.txt
 sleep 1
 xmacroplay -d 10 < temp/gotolastline.txt
 sleep 0.5
