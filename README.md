@@ -172,6 +172,9 @@ http -a admin:demodemo http://127.0.0.1:8000/users/
 
 ![drf01](img/drf01.png)
 
+---
+
+Leia a continuação deste post em [Django Rest Framework Serialization][0].
 
 
 
